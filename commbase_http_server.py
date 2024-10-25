@@ -44,15 +44,15 @@
 # With SSL certificate:
 # python commbase_http_server.py $COMMBASE_APP_DIR/src/web_app/ --host 127.0.0.1 --port 5050 --cert cert.pem --key key.pem
 
-# To create generic certificate:
+# To create a generic (self-signed) SSL certificate:
 # openssl genpkey -algorithm RSA -out key.pem
 # openssl req -new -x509 -key key.pem -out cert.pem -days 365
 
 # Important notes:
 # For localhost development, this code will work just fine and allow you to
-# test SSL if needed. However, for production or handling higher loads and
-# concurrent requests, it’s recommended to use more advanced tools like nginx
-# or gunicorn.
+# test SSL if needed. However, for distribuited environments or handling higher
+# loads and concurrent requests, it’s recommended to use more advanced tools
+# like nginx or gunicorn.
 
 import http.server
 import os
